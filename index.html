@@ -29,6 +29,7 @@
       <p class="hero-copy" data-ko="삼성전자 개발자 · 보안 전공 석사 졸업생" data-en="Samsung Electronics developer · Security master's graduate">삼성전자 개발자 · 보안 전공 석사 졸업생</p>
     </section>
 
+    <div class="chapter-grid">
     <section id="about" class="panel">
       <p class="section-label">01 / <span data-ko="소개" data-en="ABOUT">소개</span></p>
       <h2 data-ko="복잡한 문제를<br>명확하게 풉니다." data-en="I solve complex<br>problems clearly.">복잡한 문제를<br>명확하게 풉니다.</h2>
@@ -41,19 +42,21 @@
 
     <section id="skills" class="panel panel-grid">
       <div>
-        <p class="section-label">02 / <span data-ko="기술" data-en="SKILLS">기술</span></p>
+        <p class="section-label">03 / <span data-ko="기술" data-en="SKILLS">기술</span></p>
         <h2 data-ko="폭넓은 개발<br>깊이 있는 보안" data-en="Broad development.<br>Deep security.">폭넓은 개발<br>깊이 있는 보안</h2>
       </div>
       <p class="muted" data-ko="프로그래밍 언어와 보안기술 전반을 다룹니다." data-en="Working across programming languages and security technologies.">프로그래밍 언어와 보안기술 전반을 다룹니다.</p>
     </section>
 
     <section id="principles" class="panel">
-      <p class="section-label">03 / <span data-ko="원칙" data-en="PRINCIPLES">원칙</span></p>
+      <p class="section-label">04 / <span data-ko="원칙" data-en="PRINCIPLES">원칙</span></p>
       <h2 data-ko="작게 만들고,<br>정확하게 검증합니다." data-en="Build small.<br>Verify precisely.">작게 만들고,<br>정확하게 검증합니다.</h2>
     </section>
 
+    </div>
+
     <section id="games" class="panel games-panel">
-      <p class="section-label">04 / <span data-ko="게임" data-en="GAMES">게임</span></p>
+      <p class="section-label">05 / <span data-ko="게임" data-en="GAMES">게임</span></p>
       <h2 data-ko="잠시, 플레이 모드." data-en="Switch to play mode.">잠시, 플레이 모드.</h2>
       <p class="muted" data-ko="방향키, WASD 또는 터치 버튼으로 움직이세요." data-en="Move with arrows, WASD, or touch controls.">방향키, WASD 또는 터치 버튼으로 움직이세요.</p>
       <div class="game-shell">
@@ -70,11 +73,11 @@
           <span id="game-status" role="status" data-ko="시작을 눌러주세요" data-en="Press start">시작을 눌러주세요</span>
         </div>
         <div class="game-legend" aria-label="Game legend">
-          <span><i class="legend-dot legend-food">●</i><span data-ko="먹이" data-en="Food">먹이</span></span>
-          <span><i class="legend-dot legend-enemy">◆</i><span data-ko="적" data-en="Enemy">적</span></span>
-          <span><i class="legend-dot legend-hazard">▦</i><span data-ko="장애물" data-en="Hazard">장애물</span></span>
-          <span><i class="legend-dot legend-shield">✦</i><span data-ko="쉴드" data-en="Shield">쉴드</span></span>
-          <span><i class="legend-dot legend-snake">▰</i><span data-ko="지렁이" data-en="Worm">지렁이</span></span>
+          <span><i class="legend-symbol legend-food"></i><span data-ko="먹이" data-en="Food">먹이</span></span>
+          <span><i class="legend-symbol legend-enemy"></i><span data-ko="적" data-en="Enemy">적</span></span>
+          <span><i class="legend-symbol legend-hazard"></i><span data-ko="장애물" data-en="Hazard">장애물</span></span>
+          <span><i class="legend-symbol legend-shield"></i><span data-ko="쉴드" data-en="Shield">쉴드</span></span>
+          <span><i class="legend-symbol legend-snake"></i><span data-ko="지렁이" data-en="Worm">지렁이</span></span>
         </div>
         <canvas id="game-board" width="640" height="640" aria-label="Worm game board"></canvas>
         <div class="game-controls" aria-label="Touch controls">

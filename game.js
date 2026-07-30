@@ -194,7 +194,14 @@ function draw() {
   hazards.forEach((part) => {
     context.fillRect(part.x * cellSize + 2, part.y * cellSize + 2, cellSize - 4, cellSize - 4);
     context.strokeStyle = '#ffd0a8';
+    context.lineWidth = 2;
     context.strokeRect(part.x * cellSize + 5, part.y * cellSize + 5, cellSize - 10, cellSize - 10);
+    context.beginPath();
+    context.moveTo(part.x * cellSize + 7, part.y * cellSize + 7);
+    context.lineTo(part.x * cellSize + cellSize - 7, part.y * cellSize + cellSize - 7);
+    context.moveTo(part.x * cellSize + cellSize - 7, part.y * cellSize + 7);
+    context.lineTo(part.x * cellSize + 7, part.y * cellSize + cellSize - 7);
+    context.stroke();
   });
   if (powerup) {
     context.fillStyle = '#ffdd57';
@@ -213,9 +220,16 @@ function draw() {
   context.lineTo(enemy.x * cellSize + 3, enemy.y * cellSize + cellSize - 3);
   context.closePath();
   context.fill();
+  context.fillStyle = '#fff';
+  context.beginPath();
+  context.arc(enemy.x * cellSize + cellSize * .4, enemy.y * cellSize + cellSize * .56, 2, 0, Math.PI * 2);
+  context.arc(enemy.x * cellSize + cellSize * .6, enemy.y * cellSize + cellSize * .56, 2, 0, Math.PI * 2);
+  context.fill();
   snake.forEach((part, index) => {
     context.fillStyle = index === 0 ? '#e7fffc' : '#38f2d0';
-    context.fillRect(part.x * cellSize + 1, part.y * cellSize + 1, cellSize - 2, cellSize - 2);
+    context.beginPath();
+    context.roundRect(part.x * cellSize + 2, part.y * cellSize + 2, cellSize - 4, cellSize - 4, 5);
+    context.fill();
   });
 }
 
