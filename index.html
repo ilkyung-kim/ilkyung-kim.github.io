@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,12 +7,14 @@
   <title>kei | Developer &amp; Security</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script src="game.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="kei home">kei<span>.</span></a>
     <nav aria-label="Primary navigation">
       <a href="#about" data-ko="소개" data-en="About">소개</a>
+      <a href="#experience" data-ko="경험" data-en="Experience">경험</a>
       <a href="#skills" data-ko="기술" data-en="Skills">기술</a>
       <a href="#principles" data-ko="원칙" data-en="Principles">원칙</a>
       <a href="#games" data-ko="게임" data-en="Games">게임</a>
@@ -32,6 +34,11 @@
       <h2 data-ko="복잡한 문제를<br>명확하게 풉니다." data-en="I solve complex<br>problems clearly.">복잡한 문제를<br>명확하게 풉니다.</h2>
     </section>
 
+    <section id="experience" class="panel">
+      <p class="section-label">02 / <span data-ko="경험" data-en="EXPERIENCE">경험</span></p>
+      <h2 data-ko="삼성전자 개발자<br>보안 전공 석사 졸업생" data-en="Samsung Electronics developer<br>Security master's graduate">삼성전자 개발자<br>보안 전공 석사 졸업생</h2>
+    </section>
+
     <section id="skills" class="panel panel-grid">
       <div>
         <p class="section-label">02 / <span data-ko="기술" data-en="SKILLS">기술</span></p>
@@ -48,8 +55,33 @@
     <section id="games" class="panel games-panel">
       <p class="section-label">04 / <span data-ko="게임" data-en="GAMES">게임</span></p>
       <h2 data-ko="잠시, 플레이 모드." data-en="Switch to play mode.">잠시, 플레이 모드.</h2>
-      <p class="muted" data-ko="지렁이 게임이 준비 중입니다." data-en="The worm game is coming soon.">지렁이 게임이 준비 중입니다.</p>
-      <div class="game-placeholder" aria-label="Game placeholder">[ GAME / ONLINE SOON ]</div>
+      <p class="muted" data-ko="방향키, WASD 또는 터치 버튼으로 움직이세요." data-en="Move with arrows, WASD, or touch controls.">방향키, WASD 또는 터치 버튼으로 움직이세요.</p>
+      <div class="game-shell">
+        <div class="game-toolbar">
+          <span><span data-ko="점수" data-en="SCORE">점수</span> <strong id="score">0</strong></span>
+          <span><span data-ko="최고" data-en="BEST">최고</span> <strong id="high-score">0</strong></span>
+          <span><span data-ko="콤보" data-en="COMBO">콤보</span> <strong id="combo">0</strong></span>
+          <label for="difficulty" data-ko="난이도" data-en="DIFFICULTY">난이도</label>
+          <select id="difficulty" aria-label="Difficulty">
+            <option value="easy" data-ko="쉬움" data-en="Easy">쉬움</option>
+            <option value="normal" data-ko="보통" data-en="Normal">보통</option>
+            <option value="hard" data-ko="어려움" data-en="Hard">어려움</option>
+          </select>
+          <span id="game-status" role="status" data-ko="시작을 눌러주세요" data-en="Press start">시작을 눌러주세요</span>
+        </div>
+        <canvas id="game-board" width="480" height="480" aria-label="Worm game board"></canvas>
+        <div class="game-controls" aria-label="Touch controls">
+          <button type="button" data-direction="up" aria-label="Move up">▲</button>
+          <button type="button" data-direction="left" aria-label="Move left">◀</button>
+          <button type="button" data-direction="down" aria-label="Move down">▼</button>
+          <button type="button" data-direction="right" aria-label="Move right">▶</button>
+        </div>
+        <div class="game-actions">
+          <button type="button" id="start-game" data-ko="시작" data-en="Start">시작</button>
+          <button type="button" id="pause-game" data-ko="일시정지" data-en="Pause">일시정지</button>
+          <button type="button" id="restart-game" data-ko="재시작" data-en="Restart">재시작</button>
+        </div>
+      </div>
     </section>
   </main>
 

@@ -31,8 +31,19 @@ h2 { font-size: clamp(2.2rem, 5vw, 4.8rem); }
 .panel { border-top: 1px solid var(--line); min-height: 55vh; padding: 5rem 0; }
 .panel-grid { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; }
 .games-panel { background: radial-gradient(circle at 80% 30%, rgba(56, 242, 208, .12), transparent 35%); }
-.game-placeholder { border: 1px dashed var(--teal); color: var(--teal); margin-top: 2rem; max-width: 30rem; padding: 3rem 1rem; text-align: center; }
+.game-shell { margin-top: 2rem; max-width: 31rem; }
+.game-toolbar { color: var(--muted); display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; margin-bottom: .75rem; }
+.game-toolbar strong, #game-status { color: var(--teal); }
+select { background: var(--surface); border: 1px solid var(--teal); color: var(--text); padding: .25rem .4rem; }
+#game-board { background: #051011; border: 1px solid var(--line); display: block; height: auto; image-rendering: pixelated; max-width: 100%; width: 480px; }
+.game-controls { display: grid; gap: .35rem; grid-template-columns: repeat(3, 3rem); justify-content: center; margin: 1rem 0; }
+.game-controls button { min-height: 3rem; }
+.game-controls button:first-child { grid-column: 2; }
+.game-controls button:nth-child(2) { grid-column: 1; grid-row: 2; }
+.game-controls button:nth-child(3) { grid-column: 2; grid-row: 2; }
+.game-controls button:nth-child(4) { grid-column: 3; grid-row: 2; }
+.game-actions { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
 .site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 1.5rem 5vw; }
 .site-footer a { color: var(--muted); }
-@media (max-width: 700px) { .site-header { align-items: flex-start; flex-wrap: wrap; gap: .75rem 1rem; } nav { order: 3; width: 100%; } .hero { min-height: 65vh; } .panel { min-height: auto; padding: 4rem 0; } .panel-grid { grid-template-columns: 1fr; } .site-footer { flex-direction: column; gap: .5rem; } }
+@media (max-width: 768px) { .site-header { align-items: flex-start; flex-wrap: wrap; gap: .75rem 1rem; } nav { order: 3; width: 100%; } .hero { min-height: 65vh; } .panel { min-height: auto; padding: 4rem 0; } .panel-grid { grid-template-columns: 1fr; } .site-footer { flex-direction: column; gap: .5rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
