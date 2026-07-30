@@ -187,13 +187,32 @@ function draw() {
   context.fillStyle = '#051011';
   context.fillRect(0, 0, board.width, board.height);
   context.fillStyle = '#ff4f9a';
-  context.fillRect(food.x * cellSize, food.y * cellSize, cellSize, cellSize);
+  context.beginPath();
+  context.arc(food.x * cellSize + cellSize / 2, food.y * cellSize + cellSize / 2, cellSize * .32, 0, Math.PI * 2);
+  context.fill();
   context.fillStyle = '#ff7b36';
-  hazards.forEach((part) => context.fillRect(part.x * cellSize, part.y * cellSize, cellSize, cellSize));
-  context.fillStyle = '#ffdd57';
-  if (powerup) context.fillRect(powerup.x * cellSize + 3, powerup.y * cellSize + 3, cellSize - 6, cellSize - 6);
-  context.fillStyle = '#ff4f9a';
-  context.fillRect(enemy.x * cellSize + 2, enemy.y * cellSize + 2, cellSize - 4, cellSize - 4);
+  hazards.forEach((part) => {
+    context.fillRect(part.x * cellSize + 2, part.y * cellSize + 2, cellSize - 4, cellSize - 4);
+    context.strokeStyle = '#ffd0a8';
+    context.strokeRect(part.x * cellSize + 5, part.y * cellSize + 5, cellSize - 10, cellSize - 10);
+  });
+  if (powerup) {
+    context.fillStyle = '#ffdd57';
+    context.beginPath();
+    context.moveTo(powerup.x * cellSize + cellSize / 2, powerup.y * cellSize + 3);
+    context.lineTo(powerup.x * cellSize + cellSize - 3, powerup.y * cellSize + cellSize / 2);
+    context.lineTo(powerup.x * cellSize + cellSize / 2, powerup.y * cellSize + cellSize - 3);
+    context.lineTo(powerup.x * cellSize + 3, powerup.y * cellSize + cellSize / 2);
+    context.closePath();
+    context.fill();
+  }
+  context.fillStyle = '#9d7bff';
+  context.beginPath();
+  context.moveTo(enemy.x * cellSize + cellSize / 2, enemy.y * cellSize + 3);
+  context.lineTo(enemy.x * cellSize + cellSize - 3, enemy.y * cellSize + cellSize - 3);
+  context.lineTo(enemy.x * cellSize + 3, enemy.y * cellSize + cellSize - 3);
+  context.closePath();
+  context.fill();
   snake.forEach((part, index) => {
     context.fillStyle = index === 0 ? '#e7fffc' : '#38f2d0';
     context.fillRect(part.x * cellSize + 1, part.y * cellSize + 1, cellSize - 2, cellSize - 2);

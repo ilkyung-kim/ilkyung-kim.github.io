@@ -69,7 +69,14 @@
           </select>
           <span id="game-status" role="status" data-ko="시작을 눌러주세요" data-en="Press start">시작을 눌러주세요</span>
         </div>
-        <canvas id="game-board" width="480" height="480" aria-label="Worm game board"></canvas>
+        <div class="game-legend" aria-label="Game legend">
+          <span><i class="legend-dot legend-food">●</i><span data-ko="먹이" data-en="Food">먹이</span></span>
+          <span><i class="legend-dot legend-enemy">◆</i><span data-ko="적" data-en="Enemy">적</span></span>
+          <span><i class="legend-dot legend-hazard">▦</i><span data-ko="장애물" data-en="Hazard">장애물</span></span>
+          <span><i class="legend-dot legend-shield">✦</i><span data-ko="쉴드" data-en="Shield">쉴드</span></span>
+          <span><i class="legend-dot legend-snake">▰</i><span data-ko="지렁이" data-en="Worm">지렁이</span></span>
+        </div>
+        <canvas id="game-board" width="640" height="640" aria-label="Worm game board"></canvas>
         <div class="game-controls" aria-label="Touch controls">
           <button type="button" data-direction="up" aria-label="Move up">▲</button>
           <button type="button" data-direction="left" aria-label="Move left">◀</button>
